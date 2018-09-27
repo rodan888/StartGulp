@@ -47,12 +47,13 @@ $(function() {
 				.css('height', $(window).height() + 'px')
 				.find('.popup-content')
 				.removeClass('anim')
-				.append('<span class="fade_out">&#9587;</span>')
+				.append('<span class="fade_out">&#9587;</span>');
 
 				$('.fade_out').click(function(){
-					pop.fadeOut(600)
-					.find('.popup-content')
-					.addClass('anim');
+					pop.fadeOut(600);
+					if(pop.is('#popup-an'))
+						pop.find('.popup-content')
+							.addClass('anim');
 					$(this).detach();
 				});
 			});
