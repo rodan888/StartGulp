@@ -8,7 +8,7 @@ html.no-js(lang="ru")
 					div.col-md-12
 						section.tabs
 							ul 
-								each val,ind in ['nav','form','text','image','slider','popup','over']
+								each val,ind in ['nav','form','text','grid','slider','popup','over']
 									if(ind== 0)
 										li.tab-link.active(data-show=val)=val
 									else
@@ -103,26 +103,33 @@ html.no-js(lang="ru")
 											input(type="hidden", name="project_name", value="Имя сайта")
 											input(type="hidden", name="admin_email", value="tsumbaluk888@gmail.com")
 											input(type="hidden", name="form_subject", value="Заявка с имя сайта")
-								div#image.tab
+								div#grid.tab
 									div.tab-content
-										h1.title.center.mt4 Image card example
-										div.container-fluid
-											- var n = 0
-											- var i = 0
-											while n < 4
-												div.col-md-3.clrp
-													div.card
-														div.img-wrap.small
-															img(src="img/seampl"+ n++ +".jpg" alt="foto")
-											while i < 3
-												div.col-md-4.clrp
-													div.card.hover
-														div.img-wrap.small
-															img(src="img/seampl#{+n+i++}.jpg" alt="foto")
-														div.descr
-															h3 card hover||img-wrap small #{+n+i}
-															p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi atque tempore illo necessitatibus reprehenderit, soluta quasi quos!
-															a(href="#", class="btn grey") Reed
+										div.grid
+											- var k = 0
+											while k < 8
+												div.grid-item
+													div.img-wrap
+														img(src="img/seampl"+ k++ +".jpg" alt="foto")
+													
+
+										//- div.container-fluid
+										//- 	- var n = 0
+										//- 	- var i = 0
+										//- 	while n < 4
+										//- 		div.col-md-3.clrp
+										//- 			div.card
+										//- 				div.img-wrap.small
+										//- 					img(src="img/seampl"+ n++ +".jpg" alt="foto")
+										//- 	while i < 3
+										//- 		div.col-md-4.clrp
+										//- 			div.card.hover
+										//- 				div.img-wrap.small
+										//- 					img(src="img/seampl#{+n+i++}.jpg" alt="foto")
+										//- 				div.descr
+										//- 					h3 card hover||img-wrap small #{+n+i}
+										//- 					p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi atque tempore illo necessitatibus reprehenderit, soluta quasi quos!
+										//- 					a(href="#", class="btn grey") Reed
 								include templates/sliders
 								div#popup.tab
 									div.tab-content.center
